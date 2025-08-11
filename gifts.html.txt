@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gift Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .container {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+        max-width: 350px;
+        text-align: center;
+    }
+    h1 {
+        color: #d6336c;
+    }
+    input {
+        padding: 10px;
+        width: 80%;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+    button {
+        background-color: #d6336c;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #b52d5a;
+    }
+    .gift {
+        display: none;
+        margin-top: 20px;
+    }
+    img {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🎁 Enter Password</h1>
+    <input type="password" id="password" placeholder="Enter password">
+    <button onclick="checkPassword()">Open Gift</button>
+
+    <div class="gift" id="giftContent">
+        <h2>💖 Your Special Gift</h2>
+        <p>Here’s a surprise just for you!</p>
+        <img src="https://via.placeholder.com/300x200.png?text=Happy+Gift" alt="Gift">
+    </div>
+</div>
+
+<script>
+    const correctPassword = "Secret123"; // Change your password here
+
+    function checkPassword() {
+        const entered = document.getElementById("password").value;
+        if (entered === correctPassword) {
+            document.getElementById("giftContent").style.display = "block";
+        } else {
+            alert("Wrong password!");
+        }
+    }
+</script>
+
+</body>
+</html>
